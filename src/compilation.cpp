@@ -1,4 +1,4 @@
-#include "compailerCarbon.h";
+#include "compailerCarbon.h"
 
 int compile()
 {

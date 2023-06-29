@@ -1,6 +1,5 @@
 # Compailer Carbon 1.0 for learning
-Use cmake to build. The program is written using Visual Studio, 
-so the format library is not in the project directory.
+Use cmake to build.
 
 ## How to build a project?
 We clone the repository, 
@@ -17,3 +16,9 @@ compiler is running but are not compiled)
 `lib` - additional libraries
 
 `src` - cpp project files
+
+## Libraries that are used
+`fmt` - open-source formatting 
+library providing a fast and 
+safe alternative to C stdio and C++ iostreams. 
+[more](https://github.com/fmtlib/fmt)

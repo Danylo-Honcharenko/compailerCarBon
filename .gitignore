@@ -16,3 +16,5 @@ compailercarbon.sln
 /src/compailerCarbon.vcxproj
 /src/compailerCarbon.vcxproj.filters
 /dist/compailerCarbon/Debug/compailerCarbon.pdb
+INSTALL.vcxproj
+INSTALL.vcxproj.filters
