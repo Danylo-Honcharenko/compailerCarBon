@@ -17,16 +17,16 @@ void error(string errorText);
 class Checkerr 
 {
 protected:
-	string str;
+	string programSourceCode;
 	string funcDesignation;
-	string pathToCPP;
+	string pathToOutFile;
 	string line;
 	bool ckeckFileCPP = false;
 
 	const char* toCompailCPP;
 
 public:
-	Checkerr(string str);
+	Checkerr(string programSourceCode);
 	// methods prototypes 
 	int standardStructure();
 	int packages();

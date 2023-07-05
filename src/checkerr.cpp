@@ -1,24 +1,22 @@
 #include "compailerCarbon.h"
 
 // constructor
-Checkerr::Checkerr(string str)
+Checkerr::Checkerr(string programSourceCode)
 {
-	this->str = str;
+	this->programSourceCode = programSourceCode;
 }
 
 // methods
 int Checkerr::standardStructure()
 {	
 	funcDesignation = "fn Main()";
-	pathToCPP = "./out/main.cpp";
+	pathToOutFile = "./out/main.cpp";
 	toCompailCPP = "clang++ ./out/main.cpp -o ./out/main.exe";
 
-	int status = 0;
-
-	size_t serc = str.find(funcDesignation);
+	size_t serc = programSourceCode.find(funcDesignation);
 	if (serc != string::npos)
 	{
-		fstream CkeckCPP(pathToCPP);
+		fstream CkeckCPP(pathToOutFile);
 		if (CkeckCPP.is_open())
 		{
 			while (getline(CkeckCPP, line))
@@ -29,7 +27,7 @@ int Checkerr::standardStructure()
 
 			if (!ckeckFileCPP)
 			{
-				fstream WriteCPP(pathToCPP);
+				fstream WriteCPP(pathToOutFile);
 				WriteCPP << "#include <iostream>\n\n";
 				WriteCPP << "int main() {\n";
 				WriteCPP << "\tauto s = \"Hello world!\";\n";
@@ -41,18 +39,15 @@ int Checkerr::standardStructure()
 		}
 		else
 		{
-			error("File is not open!");
-			status = 1;
+			throw "File is not open";
 		}
 		CkeckCPP.close();
-		/*system(toCompailCPP);*/
 	}
 	else
 	{
-		error("Program entry point missing!");
-		status = 1;
+		throw "Program entry point missing";
 	}
-	return status;
+	return 0;
 }
 
 int Checkerr::packages()

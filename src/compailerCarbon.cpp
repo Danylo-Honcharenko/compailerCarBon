@@ -6,7 +6,7 @@ int main()
 {
 	string paramConsole;
 	string line;
-	string impWord = "locationFile: ./res/main.carbon";
+	string pathToSourceFile = "locationFile: ./res/main.carbon";
 	string fileExtension = "./res/main.carbon";
 	string fileOut = "./out/main.cpp";
 	string confFileLocal = "./set/cc.conf";
@@ -14,6 +14,7 @@ int main()
 
 	bool findWord = false;
 
+	// folders name
 	const char* nameFolder1 = "res";
 	const char* nameFolder2 = "set";
 	const char* nameFolder3 = "out";
@@ -23,7 +24,7 @@ int main()
 	while (getline(ConfigFile, line))
 	{
 		// find word
-		size_t pos = line.find(impWord);
+		size_t pos = line.find(pathToSourceFile);
 		// "string::npos" - means the word was not found
 		if (pos != string::npos)
 		{

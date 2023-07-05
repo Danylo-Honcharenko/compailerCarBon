@@ -55,15 +55,18 @@ int compile()
 	ConfigFile.close();
 
 	Checkerr checkerr(str);
-	// call methods for check code
-	if (checkerr.standardStructure() == 1)
+	try
 	{
-		cout << "Status: \"standardStructure\" error! 1" << endl;
+		checkerr.standardStructure();
+	}
+	catch (const char* errorMes)
+	{
+		error(errorMes);
 	}
 	checkerr.packages();
 	checkerr.variables();
 	checkerr.functions();
-	// --------------------------
+	
 
 	return 0;
 }
